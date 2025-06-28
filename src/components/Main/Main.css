@@ -2,3 +2,11 @@
     font-family: 'Cabinet Grotesk Bold';
     font-size: 20px;
 }
+
+.cards__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: left;
+    padding: 0;
+}
