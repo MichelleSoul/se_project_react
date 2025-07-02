@@ -1,9 +1,9 @@
-import './Main.css'
-import WeatherCard from "../WeatherCard/WeatherCard"
-import ItemCard from "../ItemCard/ItemCard"
-import { defaultClothingItems } from "../../utils/constants"
+import "./Main.css";
+import WeatherCard from "../WeatherCard/WeatherCard";
+import ItemCard from "../ItemCard/ItemCard";
+import { defaultClothingItems } from "../../utils/constants";
 
-const Main = ({ weatherData }) => {
+const Main = ({ weatherData, handleCardClick }) => {
     return (
         <main>
             <WeatherCard />
@@ -17,12 +17,18 @@ const Main = ({ weatherData }) => {
                         //     return item.weather === weatherData.type;
                         // })
                         .map((item) => {
-                            return <ItemCard key={item._id} item={item} />
+                            return (
+                                <ItemCard
+                                    key={item._id}
+                                    item={item}
+                                    onCardClick={handleCardClick}
+                                />
+                            );
                         })}
                 </ul>
             </section>
         </main>
-    )
-}
+    );
+};
 
-export default Main
+export default Main;
