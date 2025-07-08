@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
+import Footer from "../Footer/Footer";
 
 const App = () => {
 	const [weatherData, setWeatherData] = useState({
@@ -46,6 +47,7 @@ const App = () => {
 					weatherData={weatherData}
 					handleCardClick={handleCardClick}
 				/>
+				<Footer />
 			</div>
 			<ModalWithForm
 				title="New garment"

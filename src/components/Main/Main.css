@@ -1,3 +1,7 @@
+.main {
+	flex: 1;
+}
+
 .cards__text {
 	font-family: 'Cabinet Grotesk Bold';
 	font-size: 20px;
