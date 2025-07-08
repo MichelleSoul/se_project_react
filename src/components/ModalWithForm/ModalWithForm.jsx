@@ -20,7 +20,7 @@ const ModalWithForm = ({
 					type="button"
 					className="modal__close"
 				>
-					<img className="header__close_icon" src={closeIcon} />
+					<img className="header__close_icon" src={closeIcon} alt="Close Icon" />
 				</button>
 				<form className="modal__form">
 					{children}
