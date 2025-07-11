@@ -35,6 +35,8 @@
 
 	width: 20px;
 	height: 20px;
+
+	background: none;
 }
 
 .modal__content {

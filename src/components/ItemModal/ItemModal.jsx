@@ -1,5 +1,5 @@
 import "./ItemModal.css"
-import closeIcon from "../../assets/closeModal.svg";
+import closeIcon from "../../assets/closeModalWhite.svg";
 
 const ItemModal = ({ activeModal, onClose, card }) => {
 	return (
@@ -11,9 +11,9 @@ const ItemModal = ({ activeModal, onClose, card }) => {
 				<button
 					onClick={onClose}
 					type="button"
-					className="modal__close"
+					className="modal__close modal__close_item"
 				>
-					<img className="header__close_icon" src={closeIcon} alt="Close Icon" />
+					<img className="modal__close-icon" src={closeIcon} alt="Close Icon" />
 				</button>
 				<img src={card.link} alt={card.name} className="modal__image" />
 				<div className="modal__footer">
