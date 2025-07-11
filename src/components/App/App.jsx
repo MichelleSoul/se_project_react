@@ -59,8 +59,8 @@ const App = () => {
 			<ModalWithForm
 				title="New garment"
 				buttonText="Add garment"
-				activeModal={activeModal}
 				onClose={closeActiveModal}
+				isOpen={activeModal === "add-garment"}
 			>
 				<label htmlFor="name" className="modal__label">
 					Name{" "}
@@ -125,9 +125,9 @@ const App = () => {
 				</fieldset>
 			</ModalWithForm>
 			<ItemModal
-				activeModal={activeModal}
 				card={selectedCard}
 				onClose={closeActiveModal}
+				isOpen={activeModal === "preview"}
 			/>
 		</div>
 	);
