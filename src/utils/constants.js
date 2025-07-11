@@ -4,11 +4,11 @@ export const weatherOptions = [
 		condition: "clear",
 		url: new URL("../assets/weathercard/day-sunny.png", import.meta.url).href,
 	},
-	// {
-	// 	day: true,
-	// 	condition: "clouds",
-	// 	url: new URL("../assets/weathercard/day-cloudy.png", import.meta.url).href,
-	// },
+	{
+		day: true,
+		condition: "clouds",
+		url: new URL("../assets/weathercard/day-cloudy.png", import.meta.url).href,
+	},
 	{
 		day: true,
 		condition: "rain",
@@ -16,7 +16,7 @@ export const weatherOptions = [
 	},
 	{
 		day: true,
-		condition: "storm",
+		condition: "thunderstorm",
 		url: new URL("../assets/weathercard/day-storm.png", import.meta.url).href,
 	},
 	{
@@ -46,7 +46,7 @@ export const weatherOptions = [
 	},
 	{
 		day: false,
-		condition: "storm",
+		condition: "thunderstorm",
 		url: new URL("../assets/weathercard/night-storm.png", import.meta.url).href,
 	},
 	{
@@ -116,4 +116,4 @@ export const coordinates = {
 	longitude: -80.089828,
 }
 
-export const APIkey = "ab2503c9ae01237f786b36781289cd5d";
+export const APIkey = import.meta.env.VITE_WEATHER_API_KEY;
