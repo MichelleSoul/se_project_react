@@ -91,6 +91,8 @@
 
 .modal__radio-input {
 	accent-color: black;
+	transform: scale(1.231);
+	margin-right: 10px;
 }
 
 .modal__submit {
@@ -105,6 +107,8 @@
 
 
 .modal__label_type_radio {
+	display: flex;
+	align-items: center;
 	color: gray;
 }
 

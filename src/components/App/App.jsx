@@ -13,9 +13,16 @@ const App = () => {
 		type: "",
 		temp: { F: 999, },
 		city: "",
+		condition: "",
+		isDay: true,
 	});
 	const [activeModal, setActiveModal] = useState("");
-	const [selectedCard, setSelectedCard] = useState({});
+	const [selectedCard, setSelectedCard] = useState({
+		_id: "",
+		name: "",
+		weather: "",
+		link: ""
+	});
 
 	const handleCardClick = (card) => {
 		setActiveModal("preview");
@@ -62,15 +69,17 @@ const App = () => {
 						className="modal__input"
 						id="name"
 						placeholder="Name"
+						required
 					/>
 				</label>
 				<label htmlFor="imageUrl" className="modal__label">
 					Image{" "}
 					<input
-						type="text"
+						type="url"
 						className="modal__input"
 						id="imageUrl"
 						placeholder="Image URL"
+						required
 					/>
 				</label>
 				<fieldset className="modal__radio-buttons">
@@ -83,6 +92,7 @@ const App = () => {
 					>
 						<input
 							id="hot"
+							name="weather"
 							type="radio"
 							className="modal__radio-input"
 						/>{" "}
@@ -94,6 +104,7 @@ const App = () => {
 					>
 						<input
 							id="warm"
+							name="weather"
 							type="radio"
 							className="modal__radio-input"
 						/>{" "}
@@ -105,6 +116,7 @@ const App = () => {
 					>
 						<input
 							id="cold"
+							name="weather"
 							type="radio"
 							className="modal__radio-input"
 						/>{" "}
