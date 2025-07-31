@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom";
+
 import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
@@ -9,6 +11,7 @@ import Footer from "../Footer/Footer";
 import CurrentTemperatureUnitContext from "../../contexts/currentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import { defaultClothingItems } from "../../utils/constants";
+import Profile from "../Profile/Profile";
 
 const App = () => {
 	const [weatherData, setWeatherData] = useState({
@@ -46,9 +49,9 @@ const App = () => {
 	};
 
 	const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-		const newId = Math.max(...clothingItems.map((item)=>item._id)) + 1;
+		const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
 		// Update clothingItems array
-		setClothingItems((prevItems) => [{ _id: newId, name, link: imageUrl, weather },  ...prevItems]);
+		setClothingItems((prevItems) => [{ _id: newId, name, link: imageUrl, weather }, ...prevItems]);
 		closeActiveModal();
 	}
 
@@ -66,11 +69,23 @@ const App = () => {
 			<div className="page">
 				<div className="page__content">
 					<Header handleAddClick={handleAddClick} weatherData={weatherData} />
-					<Main
-						weatherData={weatherData}
-						handleCardClick={handleCardClick}
-						clothingItems={clothingItems}
-					/>
+					<Routes>
+						<Route path="/" element={
+							<Main
+								weatherData={weatherData}
+								handleCardClick={handleCardClick}
+								clothingItems={clothingItems}
+							/>}
+						/>
+						<Route path="/profile" element={
+							<Profile
+								handleAddClick={handleAddClick}
+								handleCardClick={handleCardClick}
+								clothingItems={clothingItems}
+							/>}
+						/>
+					</Routes>
+
 					<Footer />
 				</div>
 				<AddItemModal

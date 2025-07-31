@@ -1,90 +1,90 @@
 .toggle-switch {
 	width: 56px;
-    height: 28px;
-    border: 2px solid gray;
-    border-radius: 20px;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.3s;
+	height: 28px;
+	border: 2px solid gray;
+	border-radius: 20px;
+	cursor: pointer;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.3s;
 }
 
 .toggle-switch:hover {
-    border: 2px solid black;
+	border: 2px solid black;
 }
 
 .toggle-switch__checkbox {
-    position: absolute;
-    left: -20px;
+	position: absolute;
+	left: -20px;
 }
 
 .toggle-switch__label-container {
-    color: gray;
-    transition: all 0.3s;
+	color: gray;
+	transition: all 0.3s;
 }
 
 .toggle-switch:hover .toggle-switch__label-container {
-    color: black;
+	color: black;
 }
 
 .toggle-switch__label-F {
-    position: absolute;
-    left: 0;
+	position: absolute;
+	left: 0;
 }
 
 .toggle-switch__label-C {
-    position: absolute;
-    left: 28px;
+	position: absolute;
+	left: 28px;
 }
 
 .toggle-switch__label, .toggle-switch__circle-label {
-    font-size: 14px;
+	font-size: 14px;
 
-    width: 28px;
-    height: 28px;
+	width: 28px;
+	height: 28px;
 
-    text-align: center;
-    align-content: center;
+	text-align: center;
+	align-content: center;
 
-    transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 .toggle-switch__circle-container {
-    position: absolute;
+	position: absolute;
 
-    background-color: black;
-    color: white;
+	background-color: black;
+	color: white;
 
-    width: 28px;
-    height: 28px;
+	width: 28px;
+	height: 28px;
 
-    border-radius: 25px;
-    
-    overflow: hidden;
+	border-radius: 25px;
+	
+	overflow: hidden;
 
-    transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 .toggle-switch__checkbox:hover ~ .toggle-switch__circle-container {
-    transform: translateX(2px);
+	transform: translateX(2px);
 }
 
 .toggle-switch__checkbox:hover ~ .toggle-switch__circle-container .toggle-switch__circle-label {
-    transform: translateX(-2px);
+	transform: translateX(-2px);
 }
 
 .toggle-switch__checkbox:checked ~ .toggle-switch__circle-container {
-    transform: translateX(28px);
+	transform: translateX(28px);
 }
 
 .toggle-switch__checkbox:checked ~ .toggle-switch__circle-container  .toggle-switch__circle-label {
-    transform: translateX(-28px);
+	transform: translateX(-28px);
 }
 
 .toggle-switch__checkbox:checked:hover ~ .toggle-switch__circle-container {
-    transform: translateX(26px);
+	transform: translateX(26px);
 }
 
 .toggle-switch__checkbox:checked:hover ~ .toggle-switch__circle-container  .toggle-switch__circle-label {
-    transform: translateX(-26px);
+	transform: translateX(-26px);
 }

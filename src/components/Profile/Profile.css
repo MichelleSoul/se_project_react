@@ -1,0 +1,14 @@
+.profile {
+	flex: 1;
+	font-family: 'Cabinet Grotesk Bold';
+	font-size: 20px;
+
+	display: flex;
+	justify-content: space-between;
+
+	margin-top: 19px;
+}
+
+.profile__clothing-items {
+    max-width: 1015px;
+}
