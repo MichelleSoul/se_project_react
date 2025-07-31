@@ -4,9 +4,11 @@ import closeIcon from "../../assets/closeModal.svg";
 const ModalWithForm = ({
 	children,
 	buttonText,
+	buttonDisabled,
 	title,
 	onClose,
 	isOpen,
+	onSubmit,
 }) => {
 	return (
 		<div className={`modal ${isOpen ? "modal_opened" : ""}`}>
@@ -19,9 +21,9 @@ const ModalWithForm = ({
 				>
 					<img className="modal__close-icon" src={closeIcon} alt="Close Icon" />
 				</button>
-				<form className="modal__form">
+				<form onSubmit={onSubmit} className="modal__form">
 					{children}
-					<button type="submit" className="modal__submit">
+					<button type="submit" className="modal__submit" disabled={buttonDisabled}>
 						{buttonText}
 					</button>
 				</form>
