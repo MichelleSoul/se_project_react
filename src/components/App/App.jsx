@@ -10,8 +10,9 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import Footer from "../Footer/Footer";
 import CurrentTemperatureUnitContext from "../../contexts/currentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
-import { defaultClothingItems } from "../../utils/constants";
 import Profile from "../Profile/Profile";
+import { getItems, addItems, deleteItems } from "../../utils/api";
+import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal";
 
 const App = () => {
 	const [weatherData, setWeatherData] = useState({
@@ -21,7 +22,7 @@ const App = () => {
 		condition: "",
 		isDay: true,
 	});
-	const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+	const [clothingItems, setClothingItems] = useState([]);
 	const [activeModal, setActiveModal] = useState("");
 	const [selectedCard, setSelectedCard] = useState({
 		_id: "",
@@ -44,14 +45,24 @@ const App = () => {
 		setActiveModal("add-garment");
 	};
 
+	const handleConfirmDelete = () => {
+		setActiveModal("confirm-delete");
+	}
+
+	const handleDeletion = () => {
+		setClothingItems(items => items.filter(item => item._id !== selectedCard._id));
+		deleteItems(selectedCard._id)
+		closeActiveModal();
+	}
+
 	const closeActiveModal = () => {
 		setActiveModal("");
 	};
 
 	const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
 		const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
-		// Update clothingItems array
-		setClothingItems((prevItems) => [{ _id: newId, name, link: imageUrl, weather }, ...prevItems]);
+		addItems({newId, name, imageUrl, weather});
+		setClothingItems((prevItems) => [{ _id: newId, name, imageUrl, weather }, ...prevItems]);
 		closeActiveModal();
 	}
 
@@ -62,6 +73,13 @@ const App = () => {
 				setWeatherData(filteredData);
 			})
 			.catch(console.error);
+	}, []);
+
+	useEffect(() => {
+		getItems()
+			.then((data) => {
+				setClothingItems(data.reverse())
+			}).catch(console.error);
 	}, []);
 
 	return (
@@ -96,7 +114,14 @@ const App = () => {
 				<ItemModal
 					card={selectedCard}
 					onClose={closeActiveModal}
+					handleConfirmDelete={handleConfirmDelete}
 					isOpen={activeModal === "preview"}
+				/>
+				<ConfirmDeleteModal
+					onClose={closeActiveModal}
+					isOpen={activeModal === "confirm-delete"}
+					onConfirm={handleDeletion}
+					onCancel={closeActiveModal}
 				/>
 			</div>
 		</CurrentTemperatureUnitContext.Provider>
