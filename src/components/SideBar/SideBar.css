@@ -1,7 +1,7 @@
 .sidebar {
 	display: flex;
 	gap: 16px;
-	align-items: anchor-center;
+	align-items: center;
 }
 
 .sidebar__avatar {
