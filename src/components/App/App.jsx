@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import Footer from "../Footer/Footer";
-import CurrentTemperatureUnitContext from "../../contexts/currentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import { getItems, addItems, deleteItems } from "../../utils/api";
@@ -60,9 +60,9 @@ const App = () => {
 	};
 
 	const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-		const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
-		addItems({newId, name, imageUrl, weather});
-		setClothingItems((prevItems) => [{ _id: newId, name, imageUrl, weather }, ...prevItems]);
+		const _id = Math.max(...clothingItems.map((item) => item._id)) + 1;
+		addItems({_id, name, imageUrl, weather});
+		setClothingItems((prevItems) => [{ _id, name, imageUrl, weather }, ...prevItems]);
 		closeActiveModal();
 	}
 
