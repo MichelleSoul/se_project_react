@@ -1,6 +1,6 @@
 import "./Profile.css";
 import SideBar from "../SideBar/SideBar";
-import ClothesSection from "../ClohtesSection/ClothesSection";
+import ClothesSection from "../ClothesSection/ClothesSection";
 
 const Profile = ({ handleAddClick, handleCardClick, clothingItems }) => {
 	return (
