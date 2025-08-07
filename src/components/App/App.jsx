@@ -60,9 +60,15 @@ const App = () => {
 	};
 
 	const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
+<<<<<<< HEAD
 		const _id = Math.max(...clothingItems.map((item) => item._id)) + 1;
 		addItems({_id, name, imageUrl, weather});
 		setClothingItems((prevItems) => [{ _id, name, imageUrl, weather }, ...prevItems]);
+=======
+		const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
+		addItems({newId, name, imageUrl, weather});
+		setClothingItems((prevItems) => [{ _id: newId, name, imageUrl, weather }, ...prevItems]);
+>>>>>>> 7b3dd15da1ed09335a98338c8154e9ef7793c000
 		closeActiveModal();
 	}
 

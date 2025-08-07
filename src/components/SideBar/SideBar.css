@@ -1,7 +1,11 @@
 .sidebar {
 	display: flex;
 	gap: 16px;
+<<<<<<< HEAD
 	align-items: center;
+=======
+	align-items: anchor-center;
+>>>>>>> 7b3dd15da1ed09335a98338c8154e9ef7793c000
 }
 
 .sidebar__avatar {

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const baseUrl = "http://localhost:3001";
+=======
+const baseUrl = "http://localhost:3002";
+>>>>>>> 7b3dd15da1ed09335a98338c8154e9ef7793c000
 
 function getItems() {
 	return fetch(`${baseUrl}/items`).then((res) => {
