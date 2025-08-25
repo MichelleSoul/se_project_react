@@ -50,9 +50,10 @@ const App = () => {
 	}
 
 	const handleDeletion = () => {
-		setClothingItems(items => items.filter(item => item._id !== selectedCard._id));
-		deleteItems(selectedCard._id)
-		closeActiveModal();
+		deleteItems(selectedCard._id).then(() => {
+			setClothingItems(items => items.filter(item => item._id !== selectedCard._id));
+			closeActiveModal();
+		}).catch(console.error);
 	}
 
 	const closeActiveModal = () => {
@@ -61,9 +62,10 @@ const App = () => {
 
 	const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
 		const _id = Math.max(...clothingItems.map((item) => item._id)) + 1;
-		addItems({_id, name, imageUrl, weather});
-		setClothingItems((prevItems) => [{ _id, name, imageUrl, weather }, ...prevItems]);
-		closeActiveModal();
+		addItems({_id, name, imageUrl, weather}).then(() => {
+			setClothingItems((prevItems) => [{ _id, name, imageUrl, weather }, ...prevItems]);
+			closeActiveModal();
+		}).catch(console.error);
 	}
 
 	useEffect(() => {
