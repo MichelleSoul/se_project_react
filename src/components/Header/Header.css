@@ -21,6 +21,12 @@
 	padding: 0;
 }
 
+.header__sign-btn {
+	margin-left: 20px;
+	border: 0;
+	padding: 0;
+}
+
 .header__user-container {
 	display: flex;
 	align-items: center;

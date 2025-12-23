@@ -22,3 +22,7 @@ WTWR (What To Wear Recommendation) is a responsive React-based frontend applicat
 - **Figma Design Reference** — UI Kit and visual consistency
 - **React Hooks** — useState and useEffect for managing state and lifecycle
 - **Modular File Structure** — For scalable and maintainable code
+
+## Backend Repository
+
+The Express backend for WTWR is found here: https://github.com/MichelleSoul/se_project_express

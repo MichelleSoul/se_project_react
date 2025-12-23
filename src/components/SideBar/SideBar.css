@@ -1,14 +1,24 @@
-.sidebar {
+.sidebar__profile {
 	display: flex;
 	gap: 16px;
-<<<<<<< HEAD
-	align-items: center;
-=======
-	align-items: anchor-center;
->>>>>>> 7b3dd15da1ed09335a98338c8154e9ef7793c000
+	align-items: center;	
+}
+
+.sidebar__options {
+	margin-top: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.sidebar__options-btn {
+	border: 0;
+	padding: 0;
+	text-align: left;
 }
 
 .sidebar__avatar {
 	width: 56px;
 	height: 56px;
 }
+
