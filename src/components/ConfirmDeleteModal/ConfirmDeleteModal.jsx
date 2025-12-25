@@ -17,10 +17,10 @@ const ConfirmDeleteModal = ({ onClose, isOpen, onConfirm, onCancel }) => {
 					<p>This action is irreversible.</p>
 				</div>
 				<div className="modal__confirm-buttons">
-					<button onClick={onConfirm} type="submit" className="modal__submit_white modal__submit_delete">
+					<button onClick={onConfirm} type="button" className="modal__submit_white modal__submit_delete">
 						Yes, delete item
 					</button>
-					<button onClick={onCancel} type="submit" className="modal__submit_white">
+					<button onClick={onCancel} type="button" className="modal__submit_white">
 						Cancel
 					</button>
 				</div>
